@@ -3,13 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	// len=0, cap=3 slice
-	sliceA := make([]int, 0, 3)
-
-	for i := 1; i <= 15; i++ {
-		sliceA = append(sliceA, i)
-		fmt.Println(len(sliceA), cap(sliceA))
-	}
-
-	fmt.Println(sliceA)
+	source := []int{0, 1, 2}
+	target := make([]int, len(source), cap(source)*2)
+	copy(target, source)
+	fmt.Println(target)               // [0 1 2 ] 出力
+	println(len(target), cap(target)) // 3, 6 出力
 }
