@@ -1,17 +1,24 @@
 package main
 
 func main() {
-	var k int = 1
-	if k == 1 { // {が同じライン
-		println("One")
+	sum := 0
+	for i := 1; i <= 100; i++ {
+		sum += i
 	}
+	println(sum)
 
-	k = 3
-	if k == 1 {
-		println("One")
-	} else if k == 2 { // {が同じライン
-		println("Two")
-	} else { // {が同じライン
-		println("Other")
+	n := 1
+	for n < 100 {
+		n *= 2
+		//if n > 90 {
+		//   break
+		//}
+	}
+	println(n)
+
+	names := []string{"홍길동", "이순신", "강감찬"}
+
+	for index, name := range names {
+		println(index, name)
 	}
 }
