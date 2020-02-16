@@ -1,5 +1,5 @@
 package main
 
-function main() {
-  println("Hello world")
+func main() {
+	println("Hello world")
 }
