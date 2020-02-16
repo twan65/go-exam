@@ -1,22 +1,17 @@
 package main
 
+import "fmt"
+
 func main() {
-	const a int = 10
-	const b = 20
-	const s = "Hi"
-	const f = 11.
+	// Raw String Literal.
+	rawLiteral := `あいう\n
+  えお\n
+  かきく`
 
-	const (
-		Apple = iota
-		Grape
-		Orange
-	)
+	// Interpreted String Literal
+	interLiteral := "あいうえお\nかきくけこ"
 
-	println(a)
-	println(b)
-	println(s)
-	println(f)
-	println(Apple)
-	println(Grape)
-	println(Orange)
+	fmt.Println(rawLiteral)
+	fmt.Println()
+	fmt.Println(interLiteral)
 }
