@@ -1,17 +1,13 @@
 package main
 
-import "fmt"
-
 func main() {
-	// Raw String Literal.
-	rawLiteral := `あいう\n
-  えお\n
-  かきく`
+	var i int = 100
+	var u uint = uint(i)
+	var f float32 = float32(i)
+	println(f, u)
 
-	// Interpreted String Literal
-	interLiteral := "あいうえお\nかきくけこ"
-
-	fmt.Println(rawLiteral)
-	fmt.Println()
-	fmt.Println(interLiteral)
+	str := "ABC"
+	bytes := []byte(str)
+	str2 := string(bytes)
+	println(bytes, str2)
 }
