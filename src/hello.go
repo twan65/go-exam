@@ -1,20 +1,17 @@
 package main
 
-import "fmt"
+//Rect - struct定義
+type Rect struct {
+	width, height int
+}
 
-// struct 정의
-type person struct {
-	name string
-	age  int
+//Rectのarea()メソッド
+func (r Rect) area() int {
+	return r.width * r.height
 }
 
 func main() {
-	p := person{}
-	p.name = "Lee" // p가 포인터라도 . 을 사용한다
-	test(p)
-	fmt.Println(p)
-}
-
-func test(param person) {
-	param.age = 20
+	rect := Rect{10, 20} // struct生成
+	area := rect.area()  // メソッドの呼び出し
+	println(area)
 }
