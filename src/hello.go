@@ -2,10 +2,19 @@ package main
 
 import "fmt"
 
+// struct 정의
+type person struct {
+	name string
+	age  int
+}
+
 func main() {
-	source := []int{0, 1, 2}
-	target := make([]int, len(source), cap(source)*2)
-	copy(target, source)
-	fmt.Println(target)               // [0 1 2 ] 出力
-	println(len(target), cap(target)) // 3, 6 出力
+	p := person{}
+	p.name = "Lee" // p가 포인터라도 . 을 사용한다
+	test(p)
+	fmt.Println(p)
+}
+
+func test(param person) {
+	param.age = 20
 }
