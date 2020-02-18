@@ -1,25 +1,19 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
-
-func say(s string) {
-	for i := 0; i < 10; i++ {
-		fmt.Println(s, "***", i)
-	}
-}
+import "fmt"
 
 func main() {
-	// sync
-	say("Sync")
+	ch := make(chan string, 1)
+	sendChan(ch)
+	receiveChan(ch)
+}
 
-	// async
-	go say("Async1")
-	go say("Async2")
-	go say("Async3")
+func sendChan(ch chan<- string) {
+	ch <- "Data"
+	// x := <-ch // error
+}
 
-	// 3초 대기
-	time.Sleep(time.Second * 3)
+func receiveChan(ch <-chan string) {
+	data := <-ch
+	fmt.Println(data)
 }
