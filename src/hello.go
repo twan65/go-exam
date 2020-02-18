@@ -1,11 +1,25 @@
 package main
 
+import (
+	"fmt"
+	"time"
+)
+
+func say(s string) {
+	for i := 0; i < 10; i++ {
+		fmt.Println(s, "***", i)
+	}
+}
+
 func main() {
-	var a interface{} = 1
+	// sync
+	say("Sync")
 
-	i := a
-	j := a.(int)
+	// async
+	go say("Async1")
+	go say("Async2")
+	go say("Async3")
 
-	println(i)
-	println(j)
+	// 3초 대기
+	time.Sleep(time.Second * 3)
 }
